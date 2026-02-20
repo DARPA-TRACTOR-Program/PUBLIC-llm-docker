@@ -1,0 +1,27 @@
+# © 2026 Massachusetts Institute of Technology
+# MIT License
+
+services:
+  tractor-llm:
+    image: tractor-llm
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        HTTP_PROXY: $HTTP_PROXY
+        HTTPS_PROXY: $HTTPS_PROXY
+        NO_PROXY: $NO_PROXY
+    environment:
+      HTTP_PROXY: $HTTP_PROXY
+      HTTPS_PROXY: $HTTPS_PROXY
+      NO_PROXY: $NO_PROXY
+      AWS_PROFILE: $AWS_PROFILE
+      S3_KEY: $S3_KEY
+      OPENAI_BASE_URL: $OPENAI_BASE_URL
+      S3_INPUT_BUCKET: $S3_INPUT_BUCKET
+      S3_OUTPUT_BUCKET: $S3_OUTPUT_BUCKET
+      OPENAI_API_KEY: $OPENAI_API_KEY
+    command: /bin/bash
+    # volumes:
+    #   - $HOME/.aws:/home/wrapper/.aws

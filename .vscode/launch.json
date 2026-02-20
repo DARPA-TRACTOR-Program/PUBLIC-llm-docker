@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "s3_wrapper.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "s3_wrapper.py",
+            "console": "integratedTerminal",
+            "env": {
+                "S3_KEY": "Public-Tests/B01_organic/bin2hex_lib.tar.gz",
+                "OPENAI_BASE_URL": "https://api.openai.com/v1",
+                "S3_INPUT_BUCKET": "tractor-input-bucket",
+                "S3_OUTPUT_BUCKET": "tractor-llm-output-bucket",
+                "OPENAI_API_KEY": "${env:OPENAI_API_KEY}"
+            }
+        }
+    ]
+}
